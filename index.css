@@ -1,0 +1,13 @@
+body {
+    background-color: darkgray;
+}
+
+body p {
+    text-align: center;
+}
+
+body img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
