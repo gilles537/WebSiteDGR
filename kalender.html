@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>DeGevaarlijkeRovers</title>
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
+    <link rel='stylesheet' type="text/css" href='./fullcalendar-3.2.0/fullcalendar.css' />
+    <script src='./fullcalendar-3.2.0/lib/jquery.min.js'></script>
+    <script src='./fullcalendar-3.2.0/lib/moment.min.js'></script>
+    <script src='./fullcalendar-3.2.0/fullcalendar.js'></script>
+    <script>
+    $(document).ready(function() {
+
+    // page is now ready, initialize the calendar...
+
+    $('#calendar').fullCalendar({
+      dayClick: function() {
+        alert('a day has been clicked!');
+      }
+    })
+
+    });
+    function home(){
+
+      window.location.href = "index.html";
+      }
+      function OpenOverlay(){
+        document.getElementById("overlay").style.height = "100%";
+      }
+      function CloseOverlay(){
+        document.getElementById("overlay").style.height = "0%";
+      }
+    </script>
+</head>
+<body>
+    <div id="container">
+    <header onclick="home()">
+    </header>
+      <nav>
+        <ul>
+            <li><a onclick="OpenOverlay()" href=# class="button">Login</a></li>
+            <li><a href=# class="button">Kalender</a></li>
+            <li><a href=# class="button">Foto's</a></li>
+        </ul>
+      </nav>
+  <div id="overlay">
+
+  <div class="overlay-content">
+      <form action="/action_page.php">
+        <div class="imgcontainer">
+          <img src="./pictures/loginlogored.png" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container">
+          <label><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" required>
+
+          <label><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+
+          <button type="submit">Login</button>
+          <input type="checkbox" checked="checked"> Remember me
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+          <button onclick="CloseOverlay()" type="button" class="cancelbtn">Cancel</button>
+          <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+      </form>
+  </div>
+  </div>
+    <div id='calendar'></div>
+</div>
+</body>
+</html>
